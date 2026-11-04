@@ -109,7 +109,7 @@ defmodule Barbridge.Helper.QueryHelpers do
 
   def query_select(query, fields) do
     from stat_grids in query,
-         select: ^fields
+      select: ^fields
   end
 
   @spec paginate(t(), non_neg_integer(), pos_integer()) :: t()

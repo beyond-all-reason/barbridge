@@ -21,7 +21,7 @@ defmodule Barbridge.Discord.DiscordProfileLibTests do
         })
 
       assert profile.id == id
-      assert profile.user_id  == user.id
+      assert profile.user_id == user.id
     end
 
     test "handles missing attributes" do

@@ -15,13 +15,13 @@ defmodule Barbridge.Discord.DiscordProfileQueries do
   @spec where_id(t(), pos_integer()) :: t()
   def where_id(query, id) do
     from discord_profiles in query,
-         where: discord_profiles.id == ^id
+      where: discord_profiles.id == ^id
   end
 
   @spec where_user_id(t(), Ecto.UUID.t()) :: t()
   def where_user_id(query, user_id) do
     from discord_profiles in query,
-         where: discord_profiles.user_id == ^user_id
+      where: discord_profiles.user_id == ^user_id
   end
 
   @spec order_by_inserted(t(), :asc | :desc) :: t()

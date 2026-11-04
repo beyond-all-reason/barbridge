@@ -8,7 +8,9 @@ defmodule Barbridge.Discord.DiscordChannel do
   @primary_key false
   typed_schema "discord_channels" do
     field :id, :integer, primary_key: true
-    field :function, Ecto.Enum, values: [post_chat_reports: 0, post_action_reports: 1, post_action: 2]
+
+    field :function, Ecto.Enum,
+      values: [post_chat_reports: 0, post_action_reports: 1, post_action: 2]
 
     timestamps()
   end

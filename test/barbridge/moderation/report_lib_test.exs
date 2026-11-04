@@ -1,5 +1,4 @@
 defmodule Barbridge.Moderation.ReportLibTest do
-
   alias Barbridge.AccountFixtures
   alias Barbridge.DiscordFixtures
   alias Barbridge.Moderation.Report
@@ -12,7 +11,7 @@ defmodule Barbridge.Moderation.ReportLibTest do
   @minimum_attributes %{
     "report_id" => 1_234_567_890,
     "discord_message_id" => 1_529_108_517_032_693_771,
-    "discord_channel_id" => 1_410_220_729_361_764_412,
+    "discord_channel_id" => 1_410_220_729_361_764_412
   }
   @all_attributes %{
     "report_id" => 1_234_567_891,

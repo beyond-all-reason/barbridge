@@ -25,6 +25,8 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 barbridge-*.tar
 
+/priv/plts/*
+
 # Ignore assets that are produced by build tools.
 /priv/static/assets/
 
@@ -36,3 +38,4 @@ npm-debug.log
 /assets/node_modules/
 
 .idea
+.env

@@ -19,9 +19,9 @@ defmodule Barbridge.Moderation.Report do
   def changeset(report, attrs \\ %{}) do
     report
     |> cast(
-         attrs,
-         ~w(report_id first_report_id discord_message_id discord_channel_id reviewer_id)a
-       )
+      attrs,
+      ~w(report_id first_report_id discord_message_id discord_channel_id reviewer_id)a
+    )
     |> validate_required([
       :report_id,
       :discord_message_id,

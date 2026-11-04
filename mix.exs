@@ -77,9 +77,9 @@ defmodule Barbridge.MixProject do
       {:typed_ecto_schema, "~> 0.4.3", runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4.7", only: [:dev, :test], runtime: false},
-
       {:ecto_psql_extras, "~> 0.8"},
       {:con_cache, "~> 1.0"},
+      {:httpoison, "~> 3.0"},
 
       # Nostrum and Dependencies
       {:nostrum, "~> 0.10.4", runtime: Mix.env() != :test},

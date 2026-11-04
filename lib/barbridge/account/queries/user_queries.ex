@@ -15,13 +15,13 @@ defmodule Barbridge.Account.UserQueries do
   @spec where_id(t(), Ecto.UUID.t()) :: t()
   def where_id(query, id) do
     from users in query,
-         where: users.id == ^id
+      where: users.id == ^id
   end
 
   @spec where_primary_discord_profile_id(t(), pos_integer()) :: t()
   def where_primary_discord_profile_id(query, id) do
     from users in query,
-         where: users.primary_discord_profile_id == ^id
+      where: users.primary_discord_profile_id == ^id
   end
 
   @spec order_by_id(t(), :asc | :desc) :: t()
@@ -45,7 +45,7 @@ defmodule Barbridge.Account.UserQueries do
   @spec preload_primary_discord_profile(t()) :: t()
   def preload_primary_discord_profile(query) do
     from users in query,
-         left_join: primary_discord_profile in assoc(users, :primary_discord_profile),
-         preload: [primary_discord_profile: primary_discord_profile]
+      left_join: primary_discord_profile in assoc(users, :primary_discord_profile),
+      preload: [primary_discord_profile: primary_discord_profile]
   end
 end

@@ -217,12 +217,12 @@ defmodule Barbridge.Helper.DateHelper do
     year
     |> String.to_integer()
     |> NaiveDateTime.new!(
-         String.to_integer(month),
-         String.to_integer(day),
-         String.to_integer(hour),
-         String.to_integer(minute),
-         String.to_integer(second)
-       )
+      String.to_integer(month),
+      String.to_integer(day),
+      String.to_integer(hour),
+      String.to_integer(minute),
+      String.to_integer(second)
+    )
   end
 
   @doc """

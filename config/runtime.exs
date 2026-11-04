@@ -135,3 +135,16 @@ if config_env() == :prod do
   #
   # See https://swoosh.hexdocs.pm/Swoosh.html#module-installation for details.
 end
+
+config :nostrum,
+  gateway_intents: [
+    :guilds,
+    :guild_messages
+  ],
+  log_full_events: true,
+  log_dispatch_events: true,
+  token: Barbridge.ConfigHelpers.get_env("DISCORD_BOT_TOKEN")
+
+config :barbridge, Barbridge.Discord,
+  token: Barbridge.ConfigHelpers.get_env("DISCORD_BOT_TOKEN"),
+  guild_id: Barbridge.ConfigHelpers.get_env("DISCORD_GUILD_ID")

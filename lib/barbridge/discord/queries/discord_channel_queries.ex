@@ -15,13 +15,13 @@ defmodule Barbridge.Discord.DiscordChannelQueries do
   @spec where_id(t(), pos_integer()) :: t()
   def where_id(query, id) do
     from discord_channels in query,
-         where: discord_channels.id == ^id
+      where: discord_channels.id == ^id
   end
 
   @spec where_function(t(), atom()) :: t()
   def where_function(query, function) do
     from discord_channels in query,
-         where: discord_channels.function == ^function
+      where: discord_channels.function == ^function
   end
 
   @spec order_by_inserted(t(), :asc | :desc) :: t()

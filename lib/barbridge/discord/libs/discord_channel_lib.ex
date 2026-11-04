@@ -151,10 +151,10 @@ defmodule Barbridge.Discord.DiscordChannelLib do
   end
 
   @spec new_interaction_response(%{
-    required(:content) => String.t(),
-    optional(:flags) => non_neg_integer(),
-    optional(:components) => list(Nostrum.Struct.Component.t())
-  }) :: map
+          required(:content) => String.t(),
+          optional(:flags) => non_neg_integer(),
+          optional(:components) => list(Nostrum.Struct.Component.t())
+        }) :: map
   def new_interaction_response(%{content: _content} = data) do
     %{
       type: 4,
@@ -169,13 +169,12 @@ defmodule Barbridge.Discord.DiscordChannelLib do
   end
 
   @spec respond_to_interaction(Nostrum.Struct.Interaction.t(), %{
-    optional(:type) => non_neg_integer(),
-    optional(:data) => map
-  }) :: {:ok} | Nostrum.Api.error() | {:error, :discord_disabled}
+          optional(:type) => non_neg_integer(),
+          optional(:data) => map
+        }) :: {:ok} | Nostrum.Api.error() | {:error, :discord_disabled}
   def respond_to_interaction(interaction, data) do
     Interaction.create_response(interaction, data)
   end
-
 
   @spec create_interaction_followup_message(String.t(), map) ::
           {:ok, Nostrum.Struct.Message.t()} | Nostrum.Api.error()
