@@ -18,10 +18,10 @@ defmodule Barbridge.Account.UserQueries do
          where: users.id == ^id
   end
 
-  @spec where_primary_discord_user_id(t(), pos_integer()) :: t()
-  def where_primary_discord_user_id(query, id) do
+  @spec where_primary_discord_profile_id(t(), pos_integer()) :: t()
+  def where_primary_discord_profile_id(query, id) do
     from users in query,
-         where: users.primary_discord_user_id == ^id
+         where: users.primary_discord_profile_id == ^id
   end
 
   @spec order_by_id(t(), :asc | :desc) :: t()
@@ -33,19 +33,19 @@ defmodule Barbridge.Account.UserQueries do
     end
   end
 
-  @spec order_by_primary_discord_user(t(), :asc | :desc) :: t()
-  def order_by_primary_discord_user(query, direction \\ :asc) do
+  @spec order_by_primary_discord_profile(t(), :asc | :desc) :: t()
+  def order_by_primary_discord_profile(query, direction \\ :asc) do
     if direction == :asc do
-      from(users in query, order_by: [asc: users.primary_discord_user_id])
+      from(users in query, order_by: [asc: users.primary_discord_profile_id])
     else
-      from(users in query, order_by: [desc: users.primary_discord_user_id])
+      from(users in query, order_by: [desc: users.primary_discord_profile_id])
     end
   end
 
-  @spec preload_primary_discord_user(t()) :: t()
-  def preload_primary_discord_user(query) do
+  @spec preload_primary_discord_profile(t()) :: t()
+  def preload_primary_discord_profile(query) do
     from users in query,
-         left_join: primary_discord_user in assoc(users, :primary_discord_user),
-         preload: [primary_discord_user: primary_discord_user]
+         left_join: primary_discord_profile in assoc(users, :primary_discord_profile),
+         preload: [primary_discord_profile: primary_discord_profile]
   end
 end

@@ -13,9 +13,9 @@ defmodule Barbridge.Moderation.ReportLib do
   end
 
   @spec claim_report(Report.t(), non_neg_integer) :: {:ok, Report} | {:error, Ecto.Changeset.t()}
-  def claim_report(%Report{} = report, user_id) do
+  def claim_report(%Report{} = report, reviewer_id) do
     report
-    |> Report.changeset(%{user_id: user_id})
+    |> Report.changeset(%{reviewer_id: reviewer_id})
     |> Repo.update()
   end
 

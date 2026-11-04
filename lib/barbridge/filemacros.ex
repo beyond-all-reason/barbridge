@@ -14,6 +14,7 @@ defmodule Barbridge.FileMacros do
       import Barbridge.Helper.QueryHelpers
       alias Ecto.Multi
       alias Barbridge.Repo
+      alias Ecto.Query
     end
   end
 

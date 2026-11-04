@@ -5,7 +5,6 @@ defmodule Barbridge.Account.User do
   @primary_key false
   typed_schema "users" do
     field :id, Ecto.UUID, primary_key: true
-    field :name, :string
     belongs_to :primary_discord_profile, Barbridge.Discord.DiscordProfile
 
     timestamps()
@@ -15,7 +14,7 @@ defmodule Barbridge.Account.User do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, ~w(id primary_discord_profile_id)a)
-    |> validate_required(~w(id primary_discord_profile_id)a)
-    |> unique_constraint([:id, :name, :primary_discord_profile_id])
+    |> validate_required(~w(id)a)
+    |> unique_constraint([:id, :primary_discord_profile_id])
   end
 end

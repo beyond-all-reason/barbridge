@@ -6,10 +6,10 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :barbridge, Barbridge.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "barbridge_test",
+  password: "123456789",
   hostname: "localhost",
-  database: "barbridge_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "barbridge_test",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 

@@ -4,7 +4,6 @@ defmodule Barbridge.Discord.DiscordChannelLib do
   alias Nostrum.Api.Channel
   alias Nostrum.Api.Interaction
   alias Nostrum.Api.Message
-  alias Nostrum.Api.User, as: NostrumUser
   alias Barbridge.Discord.DiscordChannel
   alias Barbridge.Discord.DiscordChannelQueries
 
@@ -251,13 +250,6 @@ defmodule Barbridge.Discord.DiscordChannelLib do
   end
 
   defp get_channel_id_from_any(%{channel_id: channel_id}), do: channel_id
-
-  defp get_channel_id_from_any(identifier) do
-    case get_discord_channel(identifier) do
-      nil -> nil
-      %{id: channel_id} -> channel_id
-    end
-  end
 
   @spec get_guild_id() :: integer | nil
   def get_guild_id do

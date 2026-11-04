@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :barbridge, Barbridge.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "barbridge_dev",
+  password: "123456789",
   hostname: "localhost",
   database: "barbridge_dev",
   stacktrace: true,

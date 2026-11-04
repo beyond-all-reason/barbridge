@@ -5,7 +5,6 @@ defmodule Barbridge.Discord.DiscordChannelQueries do
 
   use Barbridge.FileMacros, :queries
 
-
   @type t :: Query.t()
 
   @spec discord_channels() :: t()

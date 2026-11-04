@@ -12,7 +12,7 @@ defmodule Barbridge.Account.UserLib do
     user_id = UUID.generate()
 
     %User{}
-    |> User.changeset(%{id: user_id, primary_discord_user_id: discord_user_id})
+    |> User.changeset(%{id: user_id, primary_discord_profile_id: discord_user_id})
     |> Repo.insert()
   end
 
@@ -20,7 +20,7 @@ defmodule Barbridge.Account.UserLib do
           {:ok, User} | {:error, Ecto.Changeset.t()}
   def update_primary_discord_profile(%User{} = user, profile_id) do
     user
-    |> User.changeset(%{primary_discord_user_id: profile_id})
+    |> User.changeset(%{primary_discord_profile_id: profile_id})
     |> Repo.update()
   end
 
@@ -40,8 +40,8 @@ defmodule Barbridge.Account.UserLib do
   @spec get_by_discord_id(pos_integer()) :: User.t()
   def get_by_discord_id(discord_id) do
     UserQueries.users()
-    |> UserQueries.preload_primary_discord_user()
-    |> UserQueries.where_primary_discord_user_id(discord_id)
+    |> UserQueries.preload_primary_discord_profile()
+    |> UserQueries.where_primary_discord_profile_id(discord_id)
     |> Repo.one()
   end
 end

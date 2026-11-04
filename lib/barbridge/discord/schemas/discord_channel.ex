@@ -1,6 +1,5 @@
 defmodule Barbridge.Discord.DiscordChannel do
   @moduledoc false
-  alias Ecto.Changeset
 
   use Barbridge.FileMacros, :schema
 
@@ -21,16 +20,8 @@ defmodule Barbridge.Discord.DiscordChannel do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, ~w(id function)a)
-    |> validate_function()
     |> validate_required(~w(id function)a)
+    |> validate_inclusion(:function, @allowed_functions)
     |> unique_constraint(:id)
-  end
-
-  defp validate_function(%Changeset{} = changeset) do
-    IO.inspect(changeset)
-#    case changeset.function in @allowed_functions do
-#      true -> []
-#      false -> [{:function, "Invalid function"}]
-#    end
   end
 end

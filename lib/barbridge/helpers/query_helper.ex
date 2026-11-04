@@ -2,6 +2,7 @@ defmodule Barbridge.Helper.QueryHelpers do
   @moduledoc false
   alias Barbridge.Repo
   import Ecto.Query, warn: false
+  alias Ecto.Query
 
   @type t :: Query.t()
 

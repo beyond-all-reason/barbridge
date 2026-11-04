@@ -14,7 +14,7 @@ defmodule Barbridge.Discord.DiscordProfile do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, ~w(id user_id)a)
-    |> validate_required(~w(id user_id)a)
+    |> validate_required(~w(id)a)
     |> unique_constraint(:id)
   end
 end

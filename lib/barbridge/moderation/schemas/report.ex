@@ -25,8 +25,7 @@ defmodule Barbridge.Moderation.Report do
     |> validate_required([
       :report_id,
       :discord_message_id,
-      :discord_channel_id,
-      :reviewer_id
+      :discord_channel_id
     ])
     |> unique_constraint(:report_id)
     |> unique_constraint(:discord_message_id)

@@ -79,6 +79,7 @@ defmodule Barbridge.MixProject do
       {:dialyxir, "~> 1.4.7", only: [:dev, :test], runtime: false},
 
       {:ecto_psql_extras, "~> 0.8"},
+      {:con_cache, "~> 1.0"},
 
       # Nostrum and Dependencies
       {:nostrum, "~> 0.10.4", runtime: Mix.env() != :test},
